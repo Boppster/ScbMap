@@ -44,9 +44,9 @@ exports.getLivingExpense = () => {
       const db = client.db('scbDb')
 
       var collection = db.collection('living-expense');
-      insertData(collection);
+      // insertData(collection);
       var cursor = collection.find({name:'Tobbe'});
-
+console.log('Cursor filled');
       cursor.forEach(function(err, doc) {
 
           console.log(doc);
@@ -63,7 +63,7 @@ exports.saveLivingExpense = (doc) => {
         console.error('err', err)
         return
       }
-      
+
       console.log('Insert data', doc);
       const db = client.db('scbDb')
 
